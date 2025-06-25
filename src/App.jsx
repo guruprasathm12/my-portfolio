@@ -2,7 +2,9 @@ import { useEffect, useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { Canvas } from "@react-three/fiber"
 import { Environment, Float, PerspectiveCamera } from "@react-three/drei"
-import { Briefcase, GraduationCap, Mail, MapPin, Phone, Github, Linkedin, Gamepad2, Music, Globe } from 'lucide-react'
+import { Briefcase, GraduationCap, Mail, MapPin, Phone, Github, Linkedin, Gamepad2, Music, Globe, Download } from 'lucide-react'
+import resume from "./assets/Guru_Prasath_Resume.pdf";
+import guru from "./assets/guru.jpg";
 
 export default function App() {
   const containerRef = useRef(null)
@@ -14,7 +16,7 @@ export default function App() {
 
   useEffect(() => {
     document.body.classList.add("dark")
-  }, [])
+  }, []);
 
   return (
     <div ref={containerRef} className="min-h-screen w-full bg-black text-white">
@@ -33,7 +35,8 @@ export default function App() {
           </Canvas>
         </div>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative z-10 text-center space-y-4">
-          <img className="max-h-40 max-w-40 place-self-center rounded-lg shadow-lg shadow-sky-400" src="https://media.licdn.com/dms/image/v2/D5603AQGbhMniNcRfdg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710159740826?e=1745452800&v=beta&t=FgpTq8KQcOoKIE6rdZC4F6XC7vFVAUCCw8tTYYlgISo" />
+          {/* <img className="max-h-40 max-w-40 place-self-center rounded-lg shadow-lg shadow-sky-400" src="https://media.licdn.com/dms/image/v2/D5603AQGbhMniNcRfdg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1710159740826?e=1745452800&v=beta&t=FgpTq8KQcOoKIE6rdZC4F6XC7vFVAUCCw8tTYYlgISo" /> */}
+          <img className="max-h-40 max-w-40 place-self-center rounded-lg shadow-lg shadow-sky-400" src={guru} />
           <h1 className="text-6xl font-bold">Guru Prasath M</h1>
           <p className="text-2xl text-sky-400">Full Stack Developer</p>
         </motion.div>
@@ -43,14 +46,14 @@ export default function App() {
       <section className="relative py-20 px-6">
         <motion.div style={{ y }} className="max-w-4xl mx-auto p-8 rounded-2xl space-y-6">
           <h2 className="text-3xl font-bold text-sky-400">Objective</h2>
-          <p className="text-gray-300">
-            To work in a company that provides the best platform to update my skills and grow with its objectives.
+          <p className="text-gray-300 text-justify">
+             <b>Proficient Software Engineer</b> with expertise in the <b>MERN stack (MongoDB, Express.js, React, Node.js)</b> and containerization using <b>Docker</b> and <b>Kubernetes</b>. Experienced in building <b>scalable web applications</b>, <b>RESTful APIs</b>, and <b>microservices</b>. Strong in <b>Agile</b> practices, <b>CI/CD</b>, <b>Git</b>, and cloud platforms like <b>AWS</b> and <b>Azure</b>. Focused on delivering <b>efficient</b>, <b>high-performance solutions</b> to drive business success.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <h3 className="text-xl font-semibold text-sky-400 mb-4">Contact</h3>
               <div className="space-y-3">
-                <div className="flex items-center gap-2"><Mail className="text-sky-400" /><span>guruprasath.m12@gmail.com</span></div>
+                <div className="flex items-center gap-2"><Mail className="text-sky-400" /><span>m.guruprasath12@gmail.com, guruprasath.m12@gmail.com</span></div>
                 <div className="flex items-center gap-2"><Phone className="text-sky-400" /><span>+91 80724 81563</span></div>
                 <div className="flex items-center gap-2"><MapPin className="text-sky-400" /><span>Coimbatore, India</span></div>
               </div>
@@ -60,6 +63,7 @@ export default function App() {
               <div className="space-y-3">
                 <a href="https://github.com/guruprasathm12" target="_blank" className="text-sky-400 flex items-center gap-2"><Github />GitHub</a>
                 <a href="https://www.linkedin.com/in/guru-prasath-m-83414a212/" target="_blank" className="text-sky-400 flex items-center gap-2"><Linkedin />LinkedIn</a>
+                <a href={resume} target="_blank" className="text-sky-400 flex items-center gap-2"><Download />Resume</a>
               </div>
             </div>
           </div>
@@ -75,14 +79,29 @@ export default function App() {
               <div className="space-y-4">
                 <div className="flex justify-between items-start">
                   <div>
+                    <h3 className="text-xl font-semibold">Software Engineer</h3>
+                    <p className="text-sky-400">Nplus Technologies <span className="text-sky-300">(Mar 2024 - Jun 2025)</span></p>
+                  </div>
+                </div>
+                <ul className="list-disc list-inside text-gray-300 space-y-2 text-justify">
+                  <li> Built and maintained scalable <b>MERN stack</b> apps for the <b>TaxiAppz</b> platform with responsive UI and modular backend.</li>
+                  <li> Integrated <b>REST APIs</b>, third-party services, and deployed solutions on <b>Microsoft Azure</b> for enhanced reliability.</li>
+                  <li> Worked in Agile teams using <b>Git</b>, CI/CD, and DevOps practices to streamline development and releases.</li>
+                </ul>
+              </div>
+            </div>
+            <div className="neumorphic border border-sky-900 rounded-md p-6">
+              <div className="space-y-4">
+                <div className="flex justify-between items-start">
+                  <div>
                     <h3 className="text-xl font-semibold">Associate Software Engineer</h3>
                     <p className="text-sky-400">Kovai.co <span className="text-sky-300">(Apr 2023 - Feb 2024)</span></p>
                   </div>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
-                  <li>Contributed to the development and enhancement of Document360</li>
-                  <li>Played a pivotal role in KB Migration</li>
-                  <li>Collaborated closely with cross-functional teams</li>
+                <ul className="list-disc list-inside text-gray-300 space-y-2 text-justify">
+                  <li> Built <b>Document360tools</b>, an internal productivity tool using the <b>MERN stack</b>, designed to support and extend the functionality of the Document360 platform.</li>
+                  <li> Implemented features for data handling, UI components, and system automation; deployed and managed services on <b>Microsoft Azure</b>.</li>
+                  <li> Collaborated in Agile teams using <b>Git</b>, <b>CI/CD pipelines</b>, and modern DevOps practices to ensure smooth delivery and integration.</li>
                 </ul>
               </div>
             </div>
@@ -94,7 +113,7 @@ export default function App() {
                     <p className="text-sky-400">Codingmart Technologies  <span className="text-sky-300">(Jan 2023 - Feb 2023)</span></p>
                   </div>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-2">
+                <ul className="list-disc list-inside text-gray-300 space-y-2 text-justify">
                   <li>Assisted in the development of scalable web applications</li>
                   <li>Worked with ReactJs, NodeJs, ExpressJs, MongoDB</li>
                   <li>Gained experience in API integration</li>
